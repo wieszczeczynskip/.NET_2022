@@ -1,0 +1,130 @@
+h2 {
+    color:red;
+}
+body {
+    background-image: url("pies.jpg");
+    background-position: center;
+    /* background-repeat: space; */
+    /* background-repeat: repeat; */
+    /* background-repeat: no-repeat; */
+    background-repeat: repeat-x;
+    /* background-size:contain; */
+    /* background-size: 400px 400px; */
+    background-size: cover;
+}
+/* p, h1 {
+    color: green;
+} */
+.yellow {
+    color: yellow;
+}
+#green {
+    color: green;
+}
+section p { /*dowolne p w section*/
+    color:aqua
+}
+section > p { /* p bezposrednio w section*/
+    background-color: red;
+    }
+#z5 {
+    width: 400px;
+    height: 400px;
+    margin: 100px 100px 100px 100px;
+    background-color: red;
+    padding: 30px;
+    float:right;
+    top: 50px;
+    left: 50px;
+    position:fixed;
+    /* position:static; */
+    opacity: 30%;
+}
+#position {
+    top: 50px;
+    left: 50px;
+    background-color: aqua;
+}
+#border {
+    border-width: 90px 90px 90px 90px;
+    border-style:dashed;
+    border-color: blue;
+}
+.wysokosc {
+    line-height: 3;
+}
+.grubosc {
+    font-weight: bolder;
+}
+table {
+    border: 10px;
+    border-color: black;
+    border-style: dotted;
+    padding: 20px;
+    border-spacing: 20px;
+}
+
+textarea:focus {
+    color: white;
+    background-color: black
+}
+/* :link {
+    color: green;
+    font-weight: bolder;
+    font-size:10em;
+} */
+h3::before {
+    content: "PRZED";
+    font-size: 10em;
+}
+h4::first-line {
+    color: red;
+}
+.top-gap {
+    height: 20px;
+}
+
+nav {
+    position:fixed;
+    left:0px;
+    top:0px;
+    font-weight: bold;
+    color: yellow;
+    border: 3px solid pink;
+    text-align: center;
+    width: 10em;
+    background-color:blueviolet;
+}
+nav ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav:hover ul {
+    display: block;
+}
+nav ul li {
+    border-top: 3px solid pink;
+    background-color:bisque;
+    width: 10em;
+    color: black;
+    height: 2em;
+}
+nav ul li:hover {
+    background-color: aqua;
+}
+    
+nav ul li ul li{
+    display: none;
+    list-style: none;
+    position: relative;
+    left: 10.1em;
+    bottom: 1.5em;
+    margin: 0;
+    padding: 0;
+    width: 10em;
+}
+nav ul li:hover ul li{
+    display: block;
+}

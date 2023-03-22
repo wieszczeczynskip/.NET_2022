@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="pwr, dotnet">
+    <meta name="description" content="lorem lorem ipsum">
+    <meta name="author" content="Paweł Wieszczeczyński">
+    <meta http-equiv="refresh" content="300">
+    <title>Lista 2 - 260414</title>
+</head>
+
+<body>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th colspan="4"><a href="https://pl.wikipedia.org/">Wikipedia</a></th>
+                <th>A</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> B </td>
+                <td> C </td>
+                <td> D </td>
+                <td colspan="2" rowspan="2"><img src="obrazek.jpg" width="80" height="40" alt="piesek"></td>
+            </tr>
+           <tr>
+                <td colspan="2" rowspan="2">@</td>
+                <td> E </td>
+           </tr>
+           <tr>
+                <td>F</td>
+                <td>G</td>
+                <td>H</td>
+           </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>I</td>
+                <td colspan="3">&lt;footer&gt;</td>
+                <td>J</td>
+            </tr>
+        </tfoot>
+    </table>
+
+
+
+
+
+
+    <nav>
+        <ul>
+            <li><a href="#bot">Go to bottom</a></li>
+            <li><a href="#list">Go to list</a></li>
+            <li><a href="#table">Go to table</a></li>
+            <li><a href="#form">Go to form</a></li>
+        </ul>
+        </nav>
+    <h1 id="top">Welcome!</h1>
+    H&amp;M<br>
+    I&apos;m<br>
+    2&gt;1<br>
+    1&lt;2<br>
+    &quot;quote&quot;<br>
+    <br>
+    <strong>Important text</strong>
+    <em>Emphasize</em>
+    <small>Not so important text</small>
+    <del>Outdated text</del>
+    Before change<ins>After change</ins>
+    <br>
+    <ul>
+        <li>Pies</li>
+        <li>Kot</li>
+        <li>Lis</li>
+    </ul>
+    <ol>
+        <li>Jeden</li>
+        <li>Dwa</li>
+        <li>Trzy</li>
+    </ol>
+    <dl>
+        <dt>Polak</dt>
+        <dd>z Polski</dd>
+        <dt>Anglik</dt>
+        <dd>z Anglii</dd>
+    </dl>
+    <ul id="list">
+        <li>Psy<ul>
+            <li>Buldog<ul>
+                <li>Francuski<ul>
+                    <li>Czarny</li>
+                    <li>Beżowy</li>
+                    <li>Biały</li>
+                </ul></li>
+                <li>Angielski</li>
+                <li>Amerykański</li>
+            </ul></li>
+            <li>Owczarek<ul>
+                <li>Podhalański<ul>
+                    <li>Szczeniak</li>
+                    <li>Pies</li>
+                    <li>Senior</li>
+                </ul></li>
+                <li>Australijski</li>
+                <li>Niemiecki</li>
+            </ul></li>
+            <li>Lablador<ul>
+                <li>Blablador</li>
+            </ul>
+            </li>
+        </ul></li>
+        <li>Koty<ul>
+            <li>Dachowiec</li>
+            <li>Sfinks</li>
+            <li>Syjamski</li>
+        </ul></li>
+    </ul>
+    <table border="1" id="table">
+        <caption>Turniej</caption>
+        <thead>
+            <tr>
+                <th colspan="5">Tabelka</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> Pole A </td>
+                <td> Pole B </td>
+                <td> Pole C </td>
+                <td> Pole D </td>
+                <td> Pole E </td>
+            </tr>
+           <tr>
+                <td colspan="2">Pole F</td>
+                <td> Pole G </td>
+                <td colspan="2">Pole H</td>
+           </tr>
+           <tr>
+                <td colspan="2" rowspan="2">Pole I</td>
+                <td colspan="2" rowspan="2">Pole J</td>
+                <td>Pole K</td>
+           </tr>
+           <tr>
+                <td>Pole L</td>
+           </tr>
+        </tbody>
+    </table>
+        
+    <form method="get" action="http://localhost:5500/z1.html" id="form">
+        <p>
+            <label for="idUsername">Username:</label>
+            <input id="idUsername" name="Username" type="text" size="30" maxlength="50">
+        </p>
+        <p>
+            <label for="idPassword">Password:</label>
+            <input id="idPassword" name="Password" type="password" size="30" maxlength="50">
+        </p>
+        <p>
+            <label>Sex:</label>
+            <label><input name="sex" type="radio" value="man">Man</label>
+            <label><input name="sex" type="radio" value="woman">Woman</label>
+            <label><input name="sex" type="radio" value="other">Other</label>
+        </p>
+        <p>
+            <label>Languages:</label>
+            <label><input name="languages" type="checkbox" value="eng" checked>English</label>
+            <label><input name="languages" type="checkbox" value="pl">Polish</label>
+            <label><input name="languages" type="checkbox" value="de">German</label>
+        </p>
+        <p>
+            <label>Age:</label>
+            <select name="age">
+                <option>1-20</option>
+                <option>21-40</option>
+                <option>41-60</option>
+                <option>60-80</option>
+                <option>80+</option>
+            </select>
+        </p>
+        <p>
+            <label>Color:</label>
+            <input id="idColor" name="Color" type="color" value="#00FF00">
+        </p>
+        <p>
+            <label>Date:</label>
+            <input id="idDate" name="Date" type="date">
+        </p>       
+        <p>
+            <label>Date and time:</label>
+            <input id="idDateTimeLocal" name="DateTimeLocal" type="datetime-local">
+        </p>            
+        <p>
+            <label>Time:</label>
+            <input id="idTime" name="Time" type="time">
+        </p>            
+        <p>
+            <label>Email:</label>
+            <input id="idEmail" name="email" type="email">
+        </p>
+        <p>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Clear">
+        </p>
+    </form>
+    <article>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, enim maxime. Laborum, itaque tempora voluptatibus ad aliquid molestiae obcaecati. Assumenda possimus officiis cum, vitae nisi eligendi nemo fugit eaque vero!</article>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <ul id="bot">
+        <li><a href="#top">Go to top</a></li>
+        <li><a href="#list">Go to list</a></li>
+        <li><a href="#table">Go to table</a></li>
+        <li><a href="#form">Go to form</a></li>
+    </ul>
+    <footer>Stopka</footer>
+
+
+</body>
+</html>

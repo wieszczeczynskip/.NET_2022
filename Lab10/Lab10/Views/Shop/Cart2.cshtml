@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Lab10.Models.CartItemViewModel>
+
+@{
+    ViewData["Title"] = "Cart2";
+}
+<h1>Cart</h1>
+@using (Html.BeginForm("Index", "Shop", FormMethod.Get))
+{
+    <button type="submit" class="btn btn-success">Back</button>
+}
+@if (@Model.Count() > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Article.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Article.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Article.Image)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Article.Category)
+                </th>
+                <th></th>
+                <th style="text-align:center">
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Article.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Article.Price)
+                    </td>
+                    <td>
+                        <img src="~/@item.Article.Image" alt="@item.Article.Image" heigth="100" width="100">
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Article.Category.Name)
+                    </td>
+                    <td>
+                        <input type="button" name="Reduce" value="Reduce" OnClientClick="Reduce(item.Article.Id)">
+                    </td>
+                    <td style="text-align: center">
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        <input type="button" name="Add" value="Add" OnClientClick="Add(item.Article.Id)">
+                    </td>
+                    <td>
+                        <input type="button" name="Delete" value="Delete" OnClientClick="Delete(item.Article.Id)">
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <h3 style="text-align: center; margin: 0 45px">Total: @ViewBag.Total</h3>
+}
+else
+{
+    <h2 style="text-align: center; margin-top: 50px;">Your cart is empty.</h2>
+}

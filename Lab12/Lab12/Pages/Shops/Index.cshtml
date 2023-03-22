@@ -1,0 +1,62 @@
+﻿@page
+@model Lab12.Pages.Shops.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<section class="left" width: 30%;>
+    <form method="get">
+        @Html.DropDownList("Id", (SelectList)ViewData["Categories"], "All")
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</section>
+
+
+<section class="right" width: 60%;>
+    <h1>Shop</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Article[0].Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Article[0].Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Article[0].filePath)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Article[0].Category)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Article)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        <img src="~/@Html.DisplayFor(modelItem => item.filePath)" heigth="100" width="100" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category.Name)
+                    </td>
+                    <td>
+                        <a asp-page="/Articles/Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-page="/Articles/Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-page="/Articles/Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>

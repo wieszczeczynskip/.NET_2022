@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 1 - Lista 4 - 260414</title>
+    <style>
+        .odd {
+            background-color: aqua;
+        }
+
+        .even {
+            background-color: pink;
+        }
+
+        .tmheader {
+            background-color: yellow;
+            font-weight: bolder;
+        }
+        
+        table {
+            top: 100;
+            left: 100;
+            position: absolute;
+            border: 4;
+            border-color:fuchsia;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        
+        var n=Number(window.prompt("Podaj wielkość tabliczki, od 5 do 20", 12))
+        
+        if(n < 5 || n > 20 || isNaN(n)) {
+            n = 12
+            window.alert("Liczba nieprawidłowa, wielkość ustalona na 12")
+        }
+        
+        var arr = [[""]];
+        
+        for (let i = 1; i < n+1; i++) {
+            arr[0][i] = (Math.floor(Math.random() * 99)+1)
+            arr[i] = []
+            arr[i][0] = arr[0][i]
+        }
+        
+        for (let i = 1; i < n+1; i++) {
+            for (let j = 1; j < n+1; j++) {
+                arr[i][j] = arr[0][j] * arr[i][0]
+            }
+        }
+        
+        const tbl = document.createElement("table");
+        const tblBody = document.createElement("tbody");
+
+        for (let i = 0; i < n+1; i++) {
+            const row = document.createElement("tr");
+            for (let j = 0; j < n+1; j++) {
+                const cell = document.createElement("td");
+                const cellText = document.createTextNode(`${arr[i][j]}`);
+                if (i == 0 || j == 0) {
+                    cell.classList.add("tmheader");
+                }
+                else {
+                    if (arr[i][j] % 2 == 1) {
+                        cell.classList.add("odd");
+                    }
+                    else {
+                        cell.classList.add("even");
+                    }
+                }
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+            }
+        tblBody.appendChild(row);
+        }
+        tbl.appendChild(tblBody);
+        document.body.appendChild(tbl);
+        tbl.setAttribute("border", "2");
+
+    </script>
+</body>
+</html>
+
